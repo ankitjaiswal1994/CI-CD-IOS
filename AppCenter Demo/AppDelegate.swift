@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           MSAnalytics.self,
           MSCrashes.self
         ])
+        
         return true
     }
 

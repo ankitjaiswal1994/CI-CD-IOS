@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AppCenterCrashes
+import AppCenterAnalytics
 
 class ViewController: UIViewController {
 
@@ -14,7 +16,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if MSCrashes.hasCrashedInLastSession() {
+            print("APp Crashes")
+        }
+        MSAnalytics.trackEvent("navigate_to_vc")
 
+    }
 
+    @IBAction func LoginButtonAction(_ sender: Any) {
+        MSAnalytics.trackEvent("pressed_login")
+    }
+    
 }
 
