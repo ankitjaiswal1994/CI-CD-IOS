@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        MSAnalytics.trackEvent("pressed_login_load")
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
